@@ -6,13 +6,15 @@ public class User {
     private double weight;
     private double height;
     private String diabetesType;
+    private int lastglicosis;
     
-    public User(String name, int age, double weight, double height, String diabetesType) {
+    public User(String name, int age, double weight, double height, String diabetesType, int lastglicosis) {
         this.name = name;
         this.age = age;
         this.weight = weight;
         this.height = height;
         this.diabetesType = diabetesType;
+        this.lastglicosis;
     }
     
     public String getName() {
@@ -54,9 +56,17 @@ public class User {
     public void setDiabetesType(String diabetesType) {
         this.diabetesType = diabetesType;
     }
+
+    public int getLastglicosis() {
+        return lastglicosis;
+    }
+
+    public void setLastglicosis(int lastglicosis) {
+        this.lastglicosis = lastglicosis;
+    }
     
     @Override
-    public String toString() {
+    public String toString() { // amigo pf adiciona glicose aqui!!!
         return "User{" +
                 "name='" + name + '\'' +
                 ", age=" + age +
