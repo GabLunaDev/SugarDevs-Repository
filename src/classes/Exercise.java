@@ -1,4 +1,5 @@
 package src.classes;
+
 public class Exercise {
     private String muscularGroup;
     private String name;

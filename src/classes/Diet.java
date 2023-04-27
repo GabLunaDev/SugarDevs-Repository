@@ -1,4 +1,5 @@
 package src.classes;
+
 public class Diet {
     private String types;
     private String results;

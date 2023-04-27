@@ -1,4 +1,5 @@
 package src.classes;
+
 public class Medicine {
     private String name;
     private int weight;

@@ -14,7 +14,7 @@ public class User {
         this.weight = weight;
         this.height = height;
         this.diabetesType = diabetesType;
-        this.lastglicosis;
+        this.lastglicosis = lastglicosis;
     }
     
     public String getName() {
