@@ -1,36 +1,17 @@
 package src.classes;
 
-public class User {
-    private String name;
-    private int age;
+public class User extends Person{
     private double weight;
     private double height;
     private String diabetesType;
     private int lastglicosis;
     
-    public User(String name, int age, double weight, double height, String diabetesType, int lastglicosis) {
-        this.name = name;
-        this.age = age;
+    public User(String firstName, String lastName, int age, String email, String cellphone, boolean whatsapp, boolean telegram, double weight, double height, String diabetesType, int lastglicosis) {
+        super(firstName, lastName, age, email, cellphone, whatsapp, telegram);
         this.weight = weight;
         this.height = height;
         this.diabetesType = diabetesType;
         this.lastglicosis = lastglicosis;
-    }
-    
-    public String getName() {
-        return name;
-    }
-    
-    public void setName(String name) {
-        this.name = name;
-    }
-    
-    public int getAge() {
-        return age;
-    }
-    
-    public void setAge(int age) {
-        this.age = age;
     }
     
     public double getWeight() {
@@ -68,8 +49,8 @@ public class User {
     @Override
     public String toString() { // amigo pf adiciona glicose aqui!!!
         return "User{" +
-                "name='" + name + '\'' +
-                ", age=" + age +
+                "name='" + getFirstName() + " " + getLastName() + '\'' +
+                ", age=" + getAge() +
                 ", weight=" + weight +
                 ", height=" + height +
                 ", diabetesType='" + diabetesType +
