@@ -72,7 +72,8 @@ public class User {
                 ", age=" + age +
                 ", weight=" + weight +
                 ", height=" + height +
-                ", diabetesType='" + diabetesType + '\'' +
+                ", diabetesType='" + diabetesType +
+                ", lastglicosis=" + lastglicosis + '\'' +
                 '}';
     }
 }
