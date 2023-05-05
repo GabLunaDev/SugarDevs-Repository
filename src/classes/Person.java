@@ -9,7 +9,7 @@ public abstract class Person extends Contact {
         super(email, cellphone, whatsapp, telegram);
         this.firstName = firstName;
         this.lastName = lastName;
-        this.age= age;
+        this.age = age;
     }
 
     public int getAge() {

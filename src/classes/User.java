@@ -1,18 +1,19 @@
 package src.classes;
+import java.util.ArrayList;
 
 public class User extends Person{
     private double weight;
     private double height;
     private String diabetesType;
-    private int lastglicosis;
+    private ArrayList<Glicosis> admeasurement;
     
-    public User(String firstName, String lastName, int age, String email, String cellphone, boolean whatsapp, boolean telegram, double weight, double height, String diabetesType, int lastglicosis) {
+    public User(String firstName, String lastName, int age, String email, String cellphone, boolean whatsapp, boolean telegram, double weight, double height, String diabetesType) {
         super(firstName, lastName, age, email, cellphone, whatsapp, telegram);
         this.weight = weight;
         this.height = height;
         this.diabetesType = diabetesType;
-        this.lastglicosis = lastglicosis;
-    }
+        this.admeasurement = new ArrayList <>();
+        }
     
     public double getWeight() {
         return weight;
@@ -37,14 +38,6 @@ public class User extends Person{
     public void setDiabetesType(String diabetesType) {
         this.diabetesType = diabetesType;
     }
-
-    public int getLastglicosis() {
-        return lastglicosis;
-    }
-
-    public void setLastglicosis(int lastglicosis) {
-        this.lastglicosis = lastglicosis;
-    }
     
     @Override
     public String toString() { // amigo pf adiciona glicose aqui!!!
@@ -53,8 +46,7 @@ public class User extends Person{
                 ", age=" + getAge() +
                 ", weight=" + weight +
                 ", height=" + height +
-                ", diabetesType='" + diabetesType +
-                ", lastglicosis=" + lastglicosis + '\'' +
+                ", diabetesType='" + diabetesType + '\'' +
                 '}';
     }
 }
