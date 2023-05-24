@@ -4,15 +4,19 @@ public class Glicosis {
     private String date;
     private double admeasurement;
 
-    public Glicosis(String date, double admeasurement){
+    public Glicosis(String date, double admeasurement) throws Exception{
         this.date = date;
-        this.admeasurement = admeasurement;
+       setAdmeasurement(admeasurement);
     }
 
     public double getAdmeasurement() {
         return admeasurement;
     }
-    public void setAdmeasurement(double admeasurement) {
+
+    public void setAdmeasurement(double admeasurement) throws Exception{
+        if(admeasurement < 0){
+            throw new Exception("Invalid input to admeasurement");
+        }
         this.admeasurement = admeasurement;
     }
     

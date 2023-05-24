@@ -7,9 +7,9 @@ public class User extends Person{
     private String diabetesType;
     private ArrayList<Glicosis> admeasurement;
     
-    public User(String firstName, String lastName, int age, String email, String cellphone, boolean whatsapp, boolean telegram, double weight, double height, String diabetesType) {
+    public User(String firstName, String lastName, int age, String email, String cellphone, boolean whatsapp, boolean telegram, double weight, double height, String diabetesType) throws Exception {
         super(firstName, lastName, age, email, cellphone, whatsapp, telegram);
-        this.weight = weight;
+        setWeight(weight);
         this.height = height;
         this.diabetesType = diabetesType;
         this.admeasurement = new ArrayList <>();
@@ -19,7 +19,11 @@ public class User extends Person{
         return weight;
     }
     
-    public void setWeight(double weight) {
+    public void setWeight(double weight)throws Exception {
+        if(weight > 500 || weight < 0){
+            throw new Exception("Invalid input to weight");
+        }
+
         this.weight = weight;
     }
     

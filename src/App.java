@@ -4,7 +4,13 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) { // idk where to start (gab got sick today) ~gus 27/04
-        User user = new User("John", "Doe", 25, "john@example.com", "123456789", true, false, 70.0, 180.0, "Type 1");
+        User user = null;
+        
+        try {
+           user = new User("John", "Doe", 25, "john@example.com", "123456789", true, false, 70.0, 180.0, "Type 1");
+        } catch (Exception e) {
+            System.out.println(e);
+        }
         printPersonDetails(user); // Polymorphism in action
 
     }
