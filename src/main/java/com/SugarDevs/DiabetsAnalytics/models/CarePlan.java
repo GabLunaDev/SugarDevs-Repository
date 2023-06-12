@@ -33,6 +33,10 @@ public class CarePlan {
     @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "diet_id", referencedColumnName = "id")
     private Diet diet;
+
+    public CarePlan(){
+        
+    }
     
     public CarePlan(Date start_date, Date final_date, Nutricionist nutricionist, Diet diet) {
         this.start_date = start_date;

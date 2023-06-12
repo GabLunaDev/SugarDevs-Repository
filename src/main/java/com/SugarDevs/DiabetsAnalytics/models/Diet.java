@@ -39,6 +39,10 @@ public class Diet {
 
     @OneToOne(mappedBy = "diet")
     private CarePlan care_plan;
+
+    public Diet(){
+        
+    }
     
     public Diet(String describe, String observations, Nutricionist nutricionist, List<Meal> meals, CarePlan care_plan) {
         this.describe = describe;

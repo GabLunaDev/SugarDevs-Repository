@@ -32,6 +32,10 @@ public abstract class Person {
     @JoinColumn(name = "contact_id", referencedColumnName = "id")
     private Contact contact;
 
+    public Person(){
+        
+    }
+
 
     public Person(String firstName, String lastName, String password, int age, Contact contact){
         this.firstName = firstName;

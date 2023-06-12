@@ -30,6 +30,10 @@ public class Glicosis {
     @JoinColumn(name = "client_id", referencedColumnName = "id")
     private Client client;
 
+    public Glicosis(){
+        
+    }
+
     public Glicosis(Date date, double admeasurement, Client user) throws Exception{
         this.date = date;
         this.client = user;

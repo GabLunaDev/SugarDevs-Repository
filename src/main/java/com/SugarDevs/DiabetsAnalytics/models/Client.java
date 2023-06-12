@@ -25,6 +25,9 @@ public class Client extends Person{
     @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
     private List<Glicosis> admeasurements;
 
+    public Client(){
+        
+    }
     
     public Client(String firstName, String lastName, String password, int age, Contact contact,double weight, double height, String diabetesType, List<Glicosis> admeasurements) throws Exception {
         super(firstName, lastName, password, age, contact);

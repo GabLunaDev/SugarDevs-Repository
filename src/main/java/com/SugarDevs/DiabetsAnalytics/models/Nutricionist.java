@@ -21,6 +21,9 @@ public class Nutricionist extends Person {
     @OneToOne(mappedBy = "nutricionist")
     private CarePlan care_plan;
 
+    public Nutricionist(){
+        
+    }
     
     public Nutricionist(String firstName, String lastName, String password, int age, Contact contact, String crn, CarePlan care_plan, List<Diet> diet) {
         super(firstName, lastName, password, age, contact);

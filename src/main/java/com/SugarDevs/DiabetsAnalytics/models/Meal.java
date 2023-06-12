@@ -24,6 +24,10 @@ public class Meal {
     @JoinColumn(name = "diet_id", referencedColumnName = "id")
     private Diet diet;
 
+    public Meal(){
+        
+    }
+
     public Meal(String describe, MealType type){
         this.type = type;
         this.describe = describe;

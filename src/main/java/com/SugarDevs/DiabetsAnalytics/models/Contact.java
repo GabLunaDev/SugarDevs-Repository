@@ -9,7 +9,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "contact")
-public abstract class Contact {
+public class Contact {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
@@ -26,6 +26,10 @@ public abstract class Contact {
 
     @Column(name = "telegram")
     private boolean telegram;
+
+    public Contact(){
+        
+    }
 
     public Contact(String email, String cellphone, boolean whatsapp, boolean telegram){
         this.email = email;
