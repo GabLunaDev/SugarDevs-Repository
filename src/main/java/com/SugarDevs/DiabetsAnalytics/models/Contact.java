@@ -1,9 +1,30 @@
-package src.classes;
+package com.SugarDevs.DiabetsAnalytics.models;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "contact")
 public abstract class Contact {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "email")
     private String email;
+
+    @Column(name = "cellphone")    
     private String cellphone;
+
+    @Column(name = "whatsapp")
     private boolean whatsapp;
+
+    @Column(name = "telegram")
     private boolean telegram;
 
     public Contact(String email, String cellphone, boolean whatsapp, boolean telegram){

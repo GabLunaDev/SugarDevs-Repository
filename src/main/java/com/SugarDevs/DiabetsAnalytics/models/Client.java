@@ -1,19 +1,38 @@
-package src.classes;
-import java.util.ArrayList;
+package com.SugarDevs.DiabetsAnalytics.models;
 
-public class User extends Person{
+import javax.persistence.Table;
+
+import java.util.List;
+
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.OneToMany;
+
+@Entity
+@Table(name = "client")
+public class Client extends Person{
+
+    @Column(name = "weight")
     private double weight;
+
+    @Column(name = "height")
     private double height;
+
+    @Column(name = "diabetes_type")
     private String diabetesType;
-    private ArrayList<Glicosis> admeasurement;
+
+    @OneToMany(mappedBy = "client", cascade = CascadeType.ALL)
+    private List<Glicosis> admeasurements;
+
     
-    public User(String firstName, String lastName, int age, String email, String cellphone, boolean whatsapp, boolean telegram, double weight, double height, String diabetesType) throws Exception {
-        super(firstName, lastName, age, email, cellphone, whatsapp, telegram);
+    public Client(String firstName, String lastName, String password, int age, Contact contact,double weight, double height, String diabetesType, List<Glicosis> admeasurements) throws Exception {
+        super(firstName, lastName, password, age, contact);
         setWeight(weight);
         this.height = height;
+        this.admeasurements = admeasurements;
         this.diabetesType = diabetesType;
-        this.admeasurement = new ArrayList <>();
-        }
+    }
     
     public double getWeight() {
         return weight;
@@ -44,7 +63,7 @@ public class User extends Person{
     }
     
     @Override
-    public String toString() { // amigo pf adiciona glicose aqui!!!
+    public String toString() {
         return "User{" +
                 "name='" + getFirstName() + " " + getLastName() + '\'' +
                 ", age=" + getAge() +
